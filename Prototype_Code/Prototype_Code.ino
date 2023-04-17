@@ -3,7 +3,7 @@
 
 GravityTDS gravityTds;
 
-float temperature = 25,tdsValue = 0;
+float temperature = 19.9,tdsValue = 0;
  
 #define TdsSensorPin A1
 
@@ -33,7 +33,7 @@ void loop() {
 
   gravityTds.setTemperature(temperature);  // set the temperature and execute temperature compensation
   gravityTds.update();  //sample and calculate
-  tdsValue = gravityTds.getTdsValue();  // then get the value
+  tdsValue = (gravityTds.getTdsValue())-32;  // then get the value
 
   static unsigned long samplingTime = millis();
   static unsigned long printTime = millis();
