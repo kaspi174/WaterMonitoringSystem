@@ -8,7 +8,7 @@ float temperature = 25,tdsValue = 0;
 #define TdsSensorPin A1
 
 #define SensorPin A2            //pH meter Analog output to Arduino Analog Input 1
-#define Offset 0.00            //deviation compensate
+#define Offset 0.82            //deviation compensate
 #define LED 13
 #define samplingInterval 20
 #define printInterval 800
@@ -43,7 +43,7 @@ void loop() {
       pHArray[pHArrayIndex++]=analogRead(SensorPin);
       if(pHArrayIndex==ArrayLenth)pHArrayIndex=0;
       voltage = avergearray(pHArray, ArrayLenth)*5.0/1024;
-      pHValue = 3.5*voltage+Offset;
+      pHValue = 3.6*voltage+Offset;
       samplingTime=millis();
   }
   if(millis() - printTime > printInterval)   //Every 800 milliseconds, print a numerical, convert the state of the LED indicator
