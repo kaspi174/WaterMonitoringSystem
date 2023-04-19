@@ -1,11 +1,3 @@
-/*
- * Author: Louis Moreau: https://github.com/luisomoreau
- * Date: 2017/03/03
- * Description:
- * This arduino example will show you how to send a Sigfox message
- * using the wisol module and the arduino UNO (https://yadom.fr/carte-breakout-sfm10r1.html)
-*/
-
 // include the SoftwareSerial library so you can use its functions:
 #include <SoftwareSerial.h>
 
