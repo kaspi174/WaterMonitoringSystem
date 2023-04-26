@@ -1,5 +1,7 @@
 // include the SoftwareSerial library so you can use its functions:
 #include <SoftwareSerial.h>
+#include <ArduinoJson.h>
+
 
 #define rxPin 10
 #define txPin 11
@@ -20,7 +22,7 @@ void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
 
   if(DEBUG){
-    Serial.begin(9600);
+    Serial.begin(115200);
   }
 
   // open Wisol communication
@@ -58,6 +60,7 @@ void blink(){
 }
 
 //Get Sigfox ID
+/*
 String getID(){
   String id = "";
   char output;
@@ -80,9 +83,10 @@ String getID(){
 
   return id;
 }
-
+*/
 
 //Get PAC number
+/*
 String getPAC(){
   String pac = "";
   char output;
@@ -105,7 +109,7 @@ String getPAC(){
 
   return pac;
 }
-
+*/
 
 //Send Sigfox Message
 void sendMessage(uint8_t msg[], int size)
