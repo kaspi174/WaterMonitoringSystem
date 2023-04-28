@@ -1,0 +1,11 @@
+table {
+    margin: 0 auto; /* This centers the table horizontally */
+    border-collapse: collapse; /* This collapses the borders between cells */
+    border: 1px solid black; /* This adds a black border around the table */
+  }
+
+  th, td {
+    border: 1px solid black; /* This adds a black border around each cell */
+    padding: 8px; /* This adds some padding to the cells */
+    text-align: center; /* This centers the text in each cell */
+  }
