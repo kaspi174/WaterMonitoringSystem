@@ -32,8 +32,8 @@ void setup() {
   Sigfox.begin(9600);
   delay(100);
   getID();
-  delay(100);
-  getPAC();
+
+
 }
 
 // the loop function runs over and over again forever
@@ -60,7 +60,6 @@ void blink(){
 }
 
 //Get Sigfox ID
-/*
 String getID(){
   String id = "";
   char output;
@@ -83,33 +82,9 @@ String getID(){
 
   return id;
 }
-*/
 
-//Get PAC number
-/*
-String getPAC(){
-  String pac = "";
-  char output;
 
-  Sigfox.print("AT$I=11\r");
-  while (!Sigfox.available()){
-     blink();
-  }
 
-  while(Sigfox.available()){
-    output = Sigfox.read();
-    pac += output;
-    delay(10);
-  }
-
-  if(DEBUG){
-    Serial.println("PAC number: ");
-    Serial.println(pac);
-  }
-
-  return pac;
-}
-*/
 
 //Send Sigfox Message
 void sendMessage(uint8_t msg[], int size)
