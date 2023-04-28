@@ -3,36 +3,72 @@ void setup() {
 }
 
 void loop() {
-  int decimalValue;
-  int bitArray[8] = {0};
-  int i = 7;
-  
-  // Prompt user to enter a decimal value between 0 and 255
-  Serial.println("Enter a decimal value between 0 and 255:");
-  
-  // Read the input value from the serial monitor
-  while (Serial.available() == 0) {
-    // Wait for input
-  }
-  decimalValue = Serial.parseInt();
+  int i, value;
+  int array1[5], array2[5], array3[5], array4[5], array5[5];
 
-  // Check if the input value is valid
-  if (decimalValue < 0 || decimalValue > 255) {
-    Serial.println("Invalid input.");
-    return;
+  // Prompt user to enter 5 values
+  Serial.println("Enter 5 values:");
+
+  // Read in each value and store it in the corresponding array
+  for (i = 0; i < 5; i++) {
+    while (Serial.available() == 0) {
+      // Wait for input
+    }
+    value = Serial.parseInt();
+    array1[i] = value;
+
+    while (Serial.available() == 0) {
+      // Wait for input
+    }
+    value = Serial.parseInt();
+    array2[i] = value;
+
+    while (Serial.available() == 0) {
+      // Wait for input
+    }
+    value = Serial.parseInt();
+    array3[i] = value;
+
+    while (Serial.available() == 0) {
+      // Wait for input
+    }
+    value = Serial.parseInt();
+    array4[i] = value;
+
+    while (Serial.available() == 0) {
+      // Wait for input
+    }
+    value = Serial.parseInt();
+    array5[i] = value;
   }
 
-  // Convert the decimal value to binary and store it in the bitArray
-  while (decimalValue > 0) {
-    bitArray[i] = decimalValue % 2;
-    decimalValue /= 2;
-    i--;
-  }
+  // Convert each value to binary and print it out
+  for (i = 0; i < 5; i++) {
+    Serial.print("Binary representation of ");
+    Serial.print(array1[i]);
+    Serial.print(": ");
+    Serial.println(String(array1[i], BIN));
 
-  // Print the binary value to the serial monitor
-  Serial.print("Binary value: ");
-  for (i = 0; i < 8; i++) {
-    Serial.print(bitArray[i]);
+    Serial.print("Binary representation of ");
+    Serial.print(array2[i]);
+    Serial.print(": ");
+    Serial.println(String(array2[i], BIN));
+
+    Serial.print("Binary representation of ");
+    Serial.print(array3[i]);
+    Serial.print(": ");
+    Serial.println(String(array3[i], BIN));
+
+    Serial.print("Binary representation of ");
+    Serial.print(array4[i]);
+    Serial.print(": ");
+    Serial.println(String(array4[i], BIN));
+
+    Serial.print("Binary representation of ");
+    Serial.print(array5[i]);
+    Serial.print(": ");
+    Serial.println(String(array5[i], BIN));
+
+    Serial.println();
   }
-  Serial.println();
 }
