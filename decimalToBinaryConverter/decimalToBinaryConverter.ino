@@ -4,10 +4,10 @@ void setup() {
 
 void loop() {
   int i, value;
-  int array1[5], array2[5], array3[5], array4[5], array5[5];
+  uint8_t array1[5], array2[5], array3[5], array4[5], array5[5]; // Use uint8_t data type to ensure values fit within one byte
 
   // Prompt user to enter 5 values
-  Serial.println("Enter 5 values:");
+  Serial.println("Enter 5 values (0-255):");
 
   // Read in each value and store it in the corresponding array
   for (i = 0; i < 5; i++) {
@@ -15,31 +15,31 @@ void loop() {
       // Wait for input
     }
     value = Serial.parseInt();
-    array1[i] = value;
+    array1[i] = constrain(value, 0, 255); // Constrain the value to fit within one byte (0-255)
 
     while (Serial.available() == 0) {
       // Wait for input
     }
     value = Serial.parseInt();
-    array2[i] = value;
+    array2[i] = constrain(value, 0, 255);
 
     while (Serial.available() == 0) {
       // Wait for input
     }
     value = Serial.parseInt();
-    array3[i] = value;
+    array3[i] = constrain(value, 0, 255);
 
     while (Serial.available() == 0) {
       // Wait for input
     }
     value = Serial.parseInt();
-    array4[i] = value;
+    array4[i] = constrain(value, 0, 255);
 
     while (Serial.available() == 0) {
       // Wait for input
     }
     value = Serial.parseInt();
-    array5[i] = value;
+    array5[i] = constrain(value, 0, 255);
   }
 
   // Convert each value to binary and combine them into a single binary string
