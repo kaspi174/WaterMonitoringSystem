@@ -4,10 +4,10 @@ void setup() {
 
 void loop() {
   int i, value;
-  uint8_t array1[5], array2[5], array3[5], array4[5], array5[5]; // Use uint8_t data type to ensure values fit within one byte
+  uint8_t array1[5], array2[5], array3[5], array4[5], array5[5];
 
   // Prompt user to enter 5 values
-  Serial.println("Enter 5 values (0-255):");
+  Serial.println("Enter 5 values between 0 and 1099511627775:");
 
   // Read in each value and store it in the corresponding array
   for (i = 0; i < 5; i++) {
@@ -15,31 +15,31 @@ void loop() {
       // Wait for input
     }
     value = Serial.parseInt();
-    array1[i] = constrain(value, 0, 255); // Constrain the value to fit within one byte (0-255)
+    array1[i] = value & 0xFF;
 
     while (Serial.available() == 0) {
       // Wait for input
     }
     value = Serial.parseInt();
-    array2[i] = constrain(value, 0, 255);
+    array2[i] = value & 0xFF;
 
     while (Serial.available() == 0) {
       // Wait for input
     }
     value = Serial.parseInt();
-    array3[i] = constrain(value, 0, 255);
+    array3[i] = value & 0xFF;
 
     while (Serial.available() == 0) {
       // Wait for input
     }
     value = Serial.parseInt();
-    array4[i] = constrain(value, 0, 255);
+    array4[i] = value & 0xFF;
 
     while (Serial.available() == 0) {
       // Wait for input
     }
     value = Serial.parseInt();
-    array5[i] = constrain(value, 0, 255);
+    array5[i] = value & 0xFF;
   }
 
   // Convert each value to binary and combine them into a single binary string
@@ -57,6 +57,11 @@ void loop() {
   for (i = 0; i < binaryString.length(); i += 4) {
     String nibble = binaryString.substring(i, i + 4);
     hexString += String(nibble.toInt(), HEX);
+  }
+
+  // Ensure that the hex string is no more than 10 characters long (5 bytes)
+  if (hexString.length() > 10) {
+    hexString = hexString.substring(hexString.length() - 10);
   }
 
   Serial.print("Hexadecimal representation of binary values: 0x");
