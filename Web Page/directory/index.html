@@ -3,29 +3,35 @@
 <head>
 <title>Water Monitoring System</title>
 <link rel="stylesheet" href="/Web Page/styles/styles.css" type="text/css">
+<script src="/Web Page/scripts/index.js"></script>
 </head>
 <body>
 
     <div id="Title">
 <h1>Water Monitoring System</h1>
 </div>
-<table>
+<table id="myTable">
+  <thead>
     <tr>
-      <th>Column 1</th>
-      <th>Column 2</th>
-      <th>Column 3</th>
+      <th>TDS</th>
+      <th>TEMP</th>
+      <th>PH</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>123</td>
+      <td>456</td>
+      <td>789</td>
     </tr>
     <tr>
-      <td>Row 1, Cell 1</td>
-      <td>Row 1, Cell 2</td>
-      <td>Row 1, Cell 3</td>
+      <td>987</td>
+      <td>654</td>
+      <td>321</td>
     </tr>
-    <tr>
-      <td>Row 2, Cell 1</td>
-      <td>Row 2, Cell 2</td>
-      <td>Row 2, Cell 3</td>
-    </tr>
-  </table>
+  </tbody>
+</table>
+  <button onclick="exportToText()">Export to Excel</button>
 
 </body>
 </html>
