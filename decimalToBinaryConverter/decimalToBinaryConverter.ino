@@ -42,33 +42,23 @@ void loop() {
     array5[i] = value;
   }
 
-  // Convert each value to binary and print it out
+  // Convert each value to binary and combine them into a single binary string
+  String binaryString = "";
   for (i = 0; i < 5; i++) {
-    Serial.print("Binary representation of ");
-    Serial.print(array1[i]);
-    Serial.print(": ");
-    Serial.println(String(array1[i], BIN));
-
-    Serial.print("Binary representation of ");
-    Serial.print(array2[i]);
-    Serial.print(": ");
-    Serial.println(String(array2[i], BIN));
-
-    Serial.print("Binary representation of ");
-    Serial.print(array3[i]);
-    Serial.print(": ");
-    Serial.println(String(array3[i], BIN));
-
-    Serial.print("Binary representation of ");
-    Serial.print(array4[i]);
-    Serial.print(": ");
-    Serial.println(String(array4[i], BIN));
-
-    Serial.print("Binary representation of ");
-    Serial.print(array5[i]);
-    Serial.print(": ");
-    Serial.println(String(array5[i], BIN));
-
-    Serial.println();
+    binaryString += String(array1[i], BIN);
+    binaryString += String(array2[i], BIN);
+    binaryString += String(array3[i], BIN);
+    binaryString += String(array4[i], BIN);
+    binaryString += String(array5[i], BIN);
   }
+
+  // Convert the binary string to hexadecimal and print it out
+  String hexString = "";
+  for (i = 0; i < binaryString.length(); i += 4) {
+    String nibble = binaryString.substring(i, i + 4);
+    hexString += String(nibble.toInt(), HEX);
+  }
+
+  Serial.print("Hexadecimal representation of binary values: 0x");
+  Serial.println(hexString);
 }
