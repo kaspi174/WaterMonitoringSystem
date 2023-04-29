@@ -1,11 +1,41 @@
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+body {
+  background-color: #00ccff;
+  background-image: linear-gradient(to bottom right, #00ccff, #66e0ff, #b3f0ff, #66e0ff, #00ccff); /* gradient for corners */
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+#title{
+  text-align: center;
+}
 table {
     margin: 0 auto; /* This centers the table horizontally */
     border-collapse: collapse; /* This collapses the borders between cells */
     border: 1px solid black; /* This adds a black border around the table */
   }
-
   th, td {
     border: 1px solid black; /* This adds a black border around each cell */
     padding: 8px; /* This adds some padding to the cells */
     text-align: center; /* This centers the text in each cell */
+    width: calc(100%/4); /*Each column is the same size*/
+  }
+  button {
+    display: block;
+    margin: 0 auto;
+
+  }
+  button:hover {
+    animation: pulse 0.5s infinite;
   }
