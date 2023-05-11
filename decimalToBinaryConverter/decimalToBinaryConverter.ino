@@ -1,3 +1,7 @@
+//Kacper Czajka
+//B00123855
+//Decimal to binary converter
+
 void setup() {
   Serial.begin(9600);  // Initialize serial communication at 9600 bits per second
 }

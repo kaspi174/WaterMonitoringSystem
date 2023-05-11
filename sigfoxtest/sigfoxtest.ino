@@ -1,3 +1,8 @@
+//Kacper Czajka
+//B00123855
+//Sample Code to test sigfox
+
+
 // include the SoftwareSerial library so you can use its functions:
 #include <SoftwareSerial.h>
 #include <ArduinoJson.h>

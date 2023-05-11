@@ -1,7 +1,6 @@
 //Kacper Czajka
 //B00123855
-//Technological University Dublin
-//Water Monitoring System
+//Water Monitoring System prototype 2 code
 
 #include <EEPROM.h>
 #include "GravityTDS.h"

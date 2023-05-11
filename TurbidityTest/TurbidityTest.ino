@@ -1,3 +1,6 @@
+//Kacper Czajka
+//B0012855
+//Sample Code to test Turbidity
 
 void setup() {
   Serial.begin(9600);

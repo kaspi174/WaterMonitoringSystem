@@ -1,3 +1,9 @@
+//Kacper Czajka
+//B0012855
+//Sample Code to test TDS
+
+
+
 #include <EEPROM.h>
 #include "GravityTDS.h"
  

@@ -1,10 +1,7 @@
-/*
- # This sample code is used to test the pH meter V1.0.
- # Editor : YouYou
- # Ver    : 1.0
- # Product: analog pH meter
- # SKU    : SEN0161
-*/
+//Kacper Czajka
+//B00123855
+//Sample Code to test pH sensor
+
 #define SensorPin A1            //pH meter Analog output to Arduino Analog Input 1
 #define Offset 0.00            //deviation compensate
 #define LED 13

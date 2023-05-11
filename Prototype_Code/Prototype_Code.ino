@@ -1,3 +1,7 @@
+//Kacper Czajka
+//B00123855
+//Sample Code to test sensors
+
 #include <EEPROM.h>
 #include "GravityTDS.h"
 
