@@ -1,41 +1,63 @@
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
+/* Set up the overall layout of the page */
 body {
-  background-color: #00ccff;
-  background-image: linear-gradient(to bottom right, #00ccff, #66e0ff, #b3f0ff, #66e0ff, #00ccff); /* gradient for corners */
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
 }
-#title{
-  text-align: center;
-}
-table {
-    margin: 0 auto; /* This centers the table horizontally */
-    border-collapse: collapse; /* This collapses the borders between cells */
-    border: 1px solid black; /* This adds a black border around the table */
-  }
-  th, td {
-    border: 1px solid black; /* This adds a black border around each cell */
-    padding: 8px; /* This adds some padding to the cells */
-    text-align: center; /* This centers the text in each cell */
-    width: calc(100%/4); /*Each column is the same size*/
-  }
-  button {
-    display: block;
-    margin: 0 auto;
 
-  }
-  button:hover {
-    animation: pulse 0.5s infinite;
-  }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+/* Style the table */
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  margin-left: 10%;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  
+}
+
+th, td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+/* Style the download button */
+button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: block;
+  margin: 0 auto;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+/* Style the page title */
+h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  color: #4CAF50;
+  text-shadow: 2px 2px #ddd;
+}
